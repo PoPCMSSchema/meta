@@ -20,6 +20,8 @@ Via Composer
 $ composer require getpop/meta
 ```
 
+([PoP](https://github.com/leoloso/PoP) must be installed)
+
 <!--
 ## Usage
 
