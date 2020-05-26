@@ -25,7 +25,9 @@ composer require getpop/meta
 Initialize the component:
 
 ``` php
-\PoP\Meta\Component::initialize();
+\PoP\Root\ComponentLoader::initializeComponents([
+    \PoP\Meta\Component::class,
+]);
 ```
 
 ## Standards
