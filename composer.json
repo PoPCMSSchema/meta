@@ -1,12 +1,12 @@
 {
-    "name": "getpop/meta",
+    "name": "pop-schema/meta",
     "type": "library",
     "description": "Adds support for meta",
     "keywords": [
         "PoP",
         "meta"
     ],
-    "homepage": "https://github.com/getpop/meta",
+    "homepage": "https://github.com/pop-schema/meta",
     "license": "MIT",
     "authors": [
         {
@@ -20,7 +20,7 @@
     "require": {
         "php": "~7.2",
         "getpop/engine": "dev-master",
-        "getpop/migrate-meta": "dev-master"
+        "pop-schema/migrate-meta": "dev-master"
     },
     "require-dev": {
         "phpstan/phpstan": "^0.12",
@@ -29,12 +29,12 @@
     },
     "autoload": {
         "psr-4": {
-            "PoP\\Meta\\": "src"
+            "PoPSchema\\Meta\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "PoP\\Meta\\": "tests"
+            "PoPSchema\\Meta\\": "tests"
         }
     },
     "scripts": {
