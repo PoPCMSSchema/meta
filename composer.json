@@ -20,7 +20,7 @@
     "require": {
         "php": "~7.2",
         "getpop/engine": "dev-master",
-        "getpop/schema-commons": "dev-master",
+        "pop-schema/schema-commons": "dev-master",
         "pop-schema/migrate-meta": "dev-master"
     },
     "require-dev": {
