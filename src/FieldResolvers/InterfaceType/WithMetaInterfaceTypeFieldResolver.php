@@ -4,13 +4,13 @@ declare(strict_types=1);
 
 namespace PoPSchema\Meta\FieldResolvers\InterfaceType;
 
-use Symfony\Contracts\Service\Attribute\Required;
 use PoP\ComponentModel\FieldResolvers\InterfaceType\AbstractInterfaceTypeFieldResolver;
 use PoP\ComponentModel\Schema\SchemaDefinition;
 use PoP\ComponentModel\Schema\SchemaTypeModifiers;
 use PoP\ComponentModel\TypeResolvers\ConcreteTypeResolverInterface;
 use PoP\ComponentModel\TypeResolvers\ScalarType\AnyScalarScalarTypeResolver;
 use PoPSchema\Meta\TypeResolvers\InterfaceType\WithMetaInterfaceTypeResolver;
+use Symfony\Contracts\Service\Attribute\Required;
 
 class WithMetaInterfaceTypeFieldResolver extends AbstractInterfaceTypeFieldResolver
 {
@@ -39,11 +39,11 @@ class WithMetaInterfaceTypeFieldResolver extends AbstractInterfaceTypeFieldResol
 
     public function getFieldTypeResolver(string $fieldName): ConcreteTypeResolverInterface
     {
-        $types = [
+        return match ($fieldName) {
             'metaValue' => $this->anyScalarScalarTypeResolver,
             'metaValues' => $this->anyScalarScalarTypeResolver,
-        ];
-        return $types[$fieldName] ?? parent::getFieldTypeResolver($fieldName);
+            default => parent::getFieldTypeResolver($fieldName),
+        };
     }
 
     public function getSchemaFieldTypeModifiers(string $fieldName): ?int
@@ -78,10 +78,10 @@ class WithMetaInterfaceTypeFieldResolver extends AbstractInterfaceTypeFieldResol
 
     public function getSchemaFieldDescription(string $fieldName): ?string
     {
-        $descriptions = [
+        return match ($fieldName) {
             'metaValue' => $this->translationAPI->__('Single meta value', 'custompostmeta'),
             'metaValues' => $this->translationAPI->__('List of meta values', 'custompostmeta'),
-        ];
-        return $descriptions[$fieldName] ?? parent::getSchemaFieldDescription($fieldName);
+            default => parent::getSchemaFieldDescription($fieldName),
+        };
     }
 }
