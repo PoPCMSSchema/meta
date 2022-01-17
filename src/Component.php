@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace PoPSchema\Meta;
+namespace PoPCMSSchema\Meta;
 
 use PoP\Root\Component\AbstractComponent;
 
@@ -20,7 +20,7 @@ class Component extends AbstractComponent
     {
         return [
             \PoP\Engine\Component::class,
-            \PoPSchema\SchemaCommons\Component::class,
+            \PoPCMSSchema\SchemaCommons\Component::class,
         ];
     }
 
